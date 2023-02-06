@@ -1,5 +1,5 @@
 # ANONYMOUS SHIT POSTING SITE
-A place where anyone can post there thoughts without logging in : [TAP] (npx create-react-app my-app)
+A place where anyone can post there thoughts without logging in : [TAP] (https://shitpost-tushar-gupta-git.vercel.app/)
 
 
 ## Available Scripts
