@@ -20,17 +20,27 @@ function Content() {
       querysnapshot.forEach((snap) => {
         postgot.push({ ...snap.data() });
       });
-      console.log(postgot);
+      // console.log(postgot);
       setpostgot(postgot);
     });
     return () => unsubscribe();
   }, []);
- 
+//   const lol=()=>{
+    var messbot = document.getElementById("BHAK");
+//     console.log(chatHistory?.scrollHeight)
+//     console.log(lol)
+//   }
+useEffect(()=>{
+  messbot?.lastChild.scrollIntoView()
+  
+  } , [postgot])
+
+
 
   return (
-    <div className="Content">
+    <div className="Content" id="BHAK">
       {postgot&& postgot.map((post)=>{
-         {console.log(post)}
+        //  {console.log(post)}
          return(
         <Message content={post.text}></Message>)}
       )}

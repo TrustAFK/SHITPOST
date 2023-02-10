@@ -11,12 +11,12 @@
     background-color: #1c2024;
     /* display: inline-block; */
     min-width: auto;
-    max-width: 40%;
+    
 }
 @media only screen and (max-width: 600px) {
     .Message{max-width: 80%;}
   }
   @media only screen and (min-width: 768px) {
-    .Message{max-width: 80%;}
+.Message{max-width: 80%;}
 
   }

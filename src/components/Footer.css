@@ -1,8 +1,12 @@
 .Footer{
+position: fixed;
     height: 9%;
+    /* border:1px solid red; */
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
 }
 .Footer_content{
-
  display: flex;
  align-items: center;
  justify-content: center;
@@ -23,7 +27,7 @@ form > input{
  padding: 10px;
  border-radius: 30px; 
  flex: 1;
- border: none;
+ border: 0px ;
  padding-left: 30px;
 
 }
