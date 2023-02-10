@@ -19,7 +19,11 @@
   display: flex;
   flex-direction: column;
   /* gap: 2rem; */
-}@media only screen and (max-width: 600px) {
+  position: relative;
+
+}
+
+@media only screen and (max-width: 600px) {
  .container{
 
   width: 90%;

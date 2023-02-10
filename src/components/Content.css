@@ -3,6 +3,7 @@
     /* border: 1px solid red; */
     overflow-y: auto;
     scrollbar-width: thin;
+    margin-top: 9%;
 }
 @media only screen and (max-width: 600px) {
 

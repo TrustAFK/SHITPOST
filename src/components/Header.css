@@ -4,7 +4,13 @@
     align-items: center;
     justify-content: center;
     /* border: 1px solid yellow; */
-    position: sticky;
+    position: fixed;
+    border-bottom: 1px solid #444141;
+    
+    width: 50vw;
     top: 0;
+    /* left: 0; */
+    background-color: #121212;
+    margin: 0 auto;
 
 }
