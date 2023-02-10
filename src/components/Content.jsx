@@ -9,6 +9,7 @@ import {
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./Firebase";
 import "./Content.css";
+import Message from "./Message";
 
 function Content() {
   const [postgot, setpostgot] = useState([]);
@@ -24,12 +25,15 @@ function Content() {
     });
     return () => unsubscribe();
   }, []);
+ 
 
   return (
     <div className="Content">
-      {postgot&& postgot.map((post)=>(
-        <h1>{post.text}</h1>
-      ))}
+      {postgot&& postgot.map((post)=>{
+         {console.log(post)}
+         return(
+        <Message content={post.text}></Message>)}
+      )}
     </div>
   );
 }

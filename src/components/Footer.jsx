@@ -4,21 +4,26 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "./Firebase";
 
 function Footer() {
+
   const [input, setinput] = useState("");
+  const [sp, setsp] = useState("");
   const getinput = (e) => {
     e.preventDefault();
     console.log(input);
+  //  var clicked = true;
+
     setinput(input);
     addDoc(collection(db, "posts"), {
       text: input,
       timestamp: serverTimestamp(),
     });
+   
   };
-
+  
   return (
     <div className="Footer">
       <div className="Footer_content">
-        <form>
+        <form id="myForm" className="myForm">
           <input
             type="text"
             placeholder="ADD MESSAGE"
