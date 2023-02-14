@@ -6,7 +6,6 @@ import {
   onSnapshot,
   getDocs,
 } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
 import { db } from "./Firebase";
 import "./Content.css";
 import Message from "./Message";
@@ -18,22 +17,23 @@ function Content() {
     const unsubscribe = onSnapshot(q, (querysnapshot) => {
       let postgot = [];
       querysnapshot.forEach((snap) => {
-        postgot.push({ ...snap.data() });
+        postgot.push({ ...snap.data()  , id:snap.id });
+        // console.log(snap)
       });
       // console.log(postgot);
       setpostgot(postgot);
     });
     return () => unsubscribe();
   }, []);
-//   const lol=()=>{
+
     var messbot = document.getElementById("BHAK");
-//     console.log(chatHistory?.scrollHeight)
-//     console.log(lol)
-//   }
-useEffect(()=>{
-  messbot?.lastChild.scrollIntoView()
+
+    useEffect(()=>{
+  if(postgot.length!=0){
+  messbot?.lastChild.scrollIntoView()}
   
   } , [postgot])
+
 
 
 
@@ -42,7 +42,7 @@ useEffect(()=>{
       {postgot&& postgot.map((post)=>{
         //  {console.log(post)}
          return(
-        <Message content={post.text}></Message>)}
+        <Message content={post.text} key={post.id}></Message>)}
       )}
     </div>
   );

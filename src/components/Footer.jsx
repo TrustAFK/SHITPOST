@@ -9,10 +9,15 @@ function Footer() {
   const [sp, setsp] = useState("");
   const getinput = (e) => {
     e.preventDefault();
-    setinput(input);
-    console.log(input);
+    let input_trimmed = input.trim() 
+    if(input_trimmed == ""){
+      return;
+    }
+    
+    setinput(input_trimmed);
+    console.log(input_trimmed);
     addDoc(collection(db, "posts"), {
-      text: input,
+      text: input_trimmed,
       timestamp: serverTimestamp(),
     });
     setinput('');
