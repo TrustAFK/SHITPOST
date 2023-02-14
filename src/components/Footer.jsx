@@ -9,22 +9,20 @@ function Footer() {
   const [sp, setsp] = useState("");
   const getinput = (e) => {
     e.preventDefault();
-    console.log(input);
-  //  var clicked = true;
-
     setinput(input);
+    console.log(input);
     addDoc(collection(db, "posts"), {
       text: input,
       timestamp: serverTimestamp(),
     });
-   
+    setinput('');
   };
 
   
   return (
     <div className="Footer">
       <div className="Footer_content">
-        <form id="myForm" className="myForm">
+        <form id="myForm1" className="myForm">
           <input
             type="text"
             placeholder="ADD MESSAGE"
@@ -32,8 +30,7 @@ function Footer() {
             onChange={(e) => setinput(e.target.value)}
           />
           <button type="submit" onClick={getinput}>
-            {" "}
-            Send{" "}
+            Send
           </button>
         </form>
       </div>
